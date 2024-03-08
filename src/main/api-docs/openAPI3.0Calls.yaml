@@ -1,0 +1,303 @@
+openapi: 3.0.0
+info:
+  title: Product API
+  description: API for managing products in the inventory.
+  version: "1.0"
+servers:
+  - url: http://localhost:8080/
+    description: Development server
+paths:
+  /products:
+    get:
+      summary: List all products
+      description: Returns a list of all products in the database.
+        responses:
+                '200':
+                  description: A JSON array of products
+                  content:
+                    application/json:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Product'
+                '400':
+                  description: Bad request
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'
+                '401':
+                  description: Unauthorized - Authentication is required and has failed or has not yet been provided.
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'
+                '403':
+                  description: Forbidden - The server understood the request, but is refusing to fulfill it.
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'
+                '404':
+                  description: Not found - The server has not found anything matching the Request-URI.
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'
+                '500':
+                  description: Internal server error - An unexpected condition was encountered.
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/Error'components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: The unique identifier of the product.
+        name:
+          type: string
+          description: The name of the product.
+        price:
+          type: number
+          format: double
+          description: The price of the product.
+      required:
+        - name
+        - price
+
+
+
+openapi: 3.0.0
+info:
+  title: Product Management API
+  description: API for managing products in the inventory.
+  version: "1.0"
+servers:
+  - url: http://localhost:8080/api
+    description: Development server
+paths:
+  /products:
+    get:
+      summary: Get a list of all products
+      description: Returns a list of all products in the database.
+      responses:
+        '200':
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      summary: Create a new product
+      description: Adds a new product to the database.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - Authentication is required and has failed or has not yet been provided.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - The server understood the request, but is refusing to fulfill it.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found - The server has not found anything matching the Request-URI.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error - An unexpected condition was encountered.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'components:
+  /products/{id}:
+    get:
+      summary: Get a product by ID
+      description: Returns a single product matching the given ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID of the product to retrieve
+      responses:
+        '200':
+          description: A single product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+         '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - Authentication is required and has failed or has not yet been provided.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - The server understood the request, but is refusing to fulfill it.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found - The server has not found anything matching the Request-URI.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error - An unexpected condition was encountered.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'components:
+    put:
+      summary: Update an existing product
+      description: Updates an existing product identified by the ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID of the product to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Product updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - Authentication is required and has failed or has not yet been provided.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - The server understood the request, but is refusing to fulfill it.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found - The server has not found anything matching the Request-URI.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error - An unexpected condition was encountered.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'components:
+    delete:
+      summary: Delete a product by ID
+      description: Deletes a product from the database by its ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: ID of the product to delete
+      responses:
+        '204':
+          description: Product deleted successfully
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - Authentication is required and has failed or has not yet been provided.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - The server understood the request, but is refusing to fulfill it.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found - The server has not found anything matching the Request-URI.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error - An unexpected condition was encountered.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'components:
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: UPC or unique identifier for the prodcut
+        name:
+          type: string
+          description: Name of the Product
+        price:
+          type: number
+          format: float
