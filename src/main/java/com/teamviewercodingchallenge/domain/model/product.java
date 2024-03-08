@@ -1,5 +1,5 @@
 // Defines the package name, which organizes the class into a specific group or namespace within the application. This is useful for managing code in a large project.
-package com.teamviewer.domain;
+package com.teamviewercodingchallenge.domain.model;
 
 // Import statements for annotations and classes used in this entity class from the Java Persistence API (JPA). These enable the mapping of this class to a database table.
 import javax.persistence.Entity;
@@ -23,4 +23,38 @@ public class Product {
     private String name; // Field to store the name of the product.
     private double price; // Field to store the price of the product.
     private String description; // Field to store a description of the product.
+
+        // Getters
+        public Long getId() {
+            return id;
+        }
+    
+        public String getName() {
+            return name;
+        }
+    
+        public double getPrice() {
+            return price;
+        }
+    
+        public String getDescription() {
+            return description;
+        }
+    
+        // Setters
+        public void setId(Long id) {
+            this.id = id;
+        }
+    
+        public void setName(String name) {
+            this.name = name;
+        }
+    
+        public void setPrice(double price) {
+            this.price = price;
+        }
+    
+        public void setDescription(String description) {
+            this.description = description;
+        }
 }

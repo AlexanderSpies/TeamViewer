@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.postgresql:postgresql:42.2.18'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.hibernate:hibernate-core:5.5.7.Final'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -27,5 +28,3 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-testImplementation 'org.springframework.boot:spring-boot-starter-test'
-testImplementation 'com.h2database:h2'

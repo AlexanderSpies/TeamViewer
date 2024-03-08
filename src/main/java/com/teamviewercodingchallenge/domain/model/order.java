@@ -1,5 +1,5 @@
 // Define the package name. This is used to organize the class into a namespace.
-package com.teamviewer.domain;
+package com.teamviewercodingchallenge.domain.model;
 
 // Import statements for various annotations and classes used in this entity class.
 import javax.persistence.Entity;

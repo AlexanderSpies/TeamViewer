@@ -1,5 +1,5 @@
 // Defines the package name to organize the class within a namespace. This helps in maintaining a structured and organized codebase.
-package com.teamviewer.domain;
+package com.teamviewercodingchallenge.domain.model;
 
 // Import statements for annotations and classes used in this entity class. These are part of the Java Persistence API (JPA), which is used for ORM (Object-Relational Mapping).
 import javax.persistence.Entity;
