@@ -12,45 +12,45 @@ paths:
       summary: List all products
       description: Returns a list of all products in the database.
         responses:
-                '200':
-                  description: A JSON array of products
-                  content:
-                    application/json:
-                      schema:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/Product'
-                '400':
-                  description: Bad request
-                  content:
-                    application/json:
-                      schema:
-                        $ref: '#/components/schemas/Error'
-                '401':
-                  description: Unauthorized - Authentication is required and has failed or has not yet been provided.
-                  content:
-                    application/json:
-                      schema:
-                        $ref: '#/components/schemas/Error'
-                '403':
-                  description: Forbidden - The server understood the request, but is refusing to fulfill it.
-                  content:
-                    application/json:
-                      schema:
-                        $ref: '#/components/schemas/Error'
-                '404':
-                  description: Not found - The server has not found anything matching the Request-URI.
-                  content:
-                    application/json:
-                      schema:
-                        $ref: '#/components/schemas/Error'
-                '500':
-                  description: Internal server error - An unexpected condition was encountered.
-                  content:
-                    application/json:
-                      schema:
-                        $ref: '#/components/schemas/Error'components:
-  schemas:
+          '200':
+            description: A JSON array of products
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Product'
+          '400':
+            description: Bad request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Unauthorized - Authentication is required and has failed or has not yet been provided.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '403':
+            description: Forbidden - The server understood the request, but is refusing to fulfill it.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '404':
+            description: Not found - The server has not found anything matching the Request-URI.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '500':
+            description: Internal server error - An unexpected condition was encountered.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'components:
+schemas:
     Product:
       type: object
       properties:
