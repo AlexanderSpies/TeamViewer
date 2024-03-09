@@ -1,4 +1,21 @@
+#File: docker-compose.yml
+#Description: This file defines the Docker Compose configuration for setting up the application and database containers.
+#Author: Alexander D Spies
+#Date: 9 March 2024
+ 
+#This YAML file specifies the services, environment variables, ports, and volumes for the application and database containers.
+#It uses PostgreSQL as the database and sets up environment variables for connecting the Spring Boot application to the database.
+ 
+#Usage:
+  #- Customize the environment variables, image versions, and other settings as needed.
+  #- Run `docker-compose up` to build and start the containers.
+  
+  #For more information about Docker Compose, refer to the official documentation:
+  #- Docker Compose: https://docs.docker.com/compose/
+ 
+
 version: '3.8'
+
 services:
   db:
     image: postgres:13

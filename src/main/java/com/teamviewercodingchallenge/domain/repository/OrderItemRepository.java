@@ -1,3 +1,24 @@
+/*
+ * File: OrderItemRepository.java
+ * Description: This file defines the repository interface for managing OrderItem entities.
+ * Author: Alexander D Spies
+ * Date: 9 March 2024
+ * 
+ * This repository interface extends JpaRepository, providing CRUD (Create, Read, Update, Delete) operations
+ * for OrderItem entities in the database.
+ * 
+ * Dependencies:
+ * - Spring Data JPA: Provides JpaRepository interface for working with JPA entities.
+ * 
+ * Usage:
+ * - This interface is used to define methods for accessing and manipulating OrderItem entities in the database.
+ * - Extending JpaRepository allows this repository to inherit methods for CRUD operations without needing to implement them.
+ * - Customize the repository interface according to the specific data access requirements of your application.
+ * 
+ * For more information about Spring Data JPA, refer to the official documentation:
+ * - Spring Data JPA: https://spring.io/projects/spring-data-jpa
+ */
+
 // Defines the package name, grouping this interface within a specific part of the application's structure. This helps in organizing the codebase, especially in large projects.
 package com.teamviewercodingchallenge.domain.repository;
 

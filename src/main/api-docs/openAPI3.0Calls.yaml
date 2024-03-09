@@ -1,3 +1,19 @@
+# OpenAPI Specification
+# File: product_api.yaml
+# Description: This file describes the API for managing products in the inventory.
+# Version: 1.0
+# Author: Alexander D. Spies
+# Date: 9 March 2024
+# 
+# This OpenAPI specification defines the endpoints, request/response schemas,
+# and other details necessary for interacting with the Product API. It allows
+# developers to understand the functionality provided by the API and to generate
+# client/server code, documentation, and tests automatically.
+#
+# Usage: This file can be used with various OpenAPI tools such as Swagger UI,
+# Swagger Editor, and code generation tools to build, document, and consume the API.
+# 
+# For more information about OpenAPI, visit https://www.openapis.org/
 openapi: 3.0.0
 info:
   title: Product API

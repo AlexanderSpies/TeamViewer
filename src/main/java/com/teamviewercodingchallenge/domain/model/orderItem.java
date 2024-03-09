@@ -1,3 +1,28 @@
+/*
+ * File: OrderItem.java
+ * Description: This file defines the entity class representing an order item.
+ * Author: Alexander D Spies
+ * Date: 9 March 2024
+ * 
+ * This entity class represents an order item in the system. It is mapped to the "orderedItems" table in the database.
+ * 
+ * Fields:
+ * - id: Unique identifier for each OrderItem instance. It is the primary key of the "orderedItems" table.
+ * - order: Reference to the Order entity that this OrderItem is part of.
+ * - product: Reference to the Product entity that this OrderItem is associated with.
+ * - quantity: Quantity of the product in this order item.
+ * 
+ * Dependencies:
+ * - Jakarta Persistence API (JPA): Annotations for defining entity classes and mapping them to database tables.
+ * 
+ * Usage:
+ * - This class is used to represent order items and their associations with orders and products.
+ * - Customize the fields and annotations according to the specific requirements of your application.
+ * 
+ * For more information about Jakarta Persistence API (JPA), refer to the official documentation:
+ * - Jakarta Persistence: https://jakarta.ee/specifications/persistence/3.0/
+ */
+
 // Defines the package name to organize the class within a namespace. This helps in maintaining a structured and organized codebase.
 package com.teamviewercodingchallenge.domain.model;
 
@@ -8,7 +33,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
 
 // The @Entity annotation marks this class as a JPA entity, indicating it should be mapped to a database table.
 @Entity

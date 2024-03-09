@@ -1,3 +1,21 @@
+/*
+ * File: build.gradle
+ * Description: This file defines the project configuration and dependencies using Gradle build tool.
+ * Author: Alexander D Spies
+ * Date: 9 March 2024
+ * 
+ * This build script defines the project's plugins, group, version, source compatibility, repositories, and dependencies.
+ * It uses Spring Boot and Spring Dependency Management plugins for managing dependencies and configuring the application.
+ * 
+ * Usage:
+ * - Configure your project by modifying the settings and dependencies as needed.
+ * - Run Gradle tasks to build, test, and run the project.
+ * 
+ * For more information about Gradle and Spring Boot, refer to the official documentation:
+ * - Gradle: https://docs.gradle.org/current/userguide/userguide.html
+ * - Spring Boot Gradle Plugin: https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
+ */
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.3'
