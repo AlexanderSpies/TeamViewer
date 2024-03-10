@@ -32,7 +32,7 @@ Before you begin, ensure you have Docker installed on your system. You can downl
 ## Building and Running the Application
 Follow these steps to build and run the application using Docker:
 
-cd TEAMVIEWER
+cd TeamViewer
 Build the Docker image:
 
 docker build -t teamviewer-app .
